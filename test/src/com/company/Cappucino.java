@@ -1,17 +1,19 @@
 package com.company;
 
 public class Cappucino extends Kaffeesorte {
-    public Cappucino(){
-        super(6);
+    protected Cappucino() {
+        super(6, true);
     }
+
 
     @Override
     public double getbohnenverbrauch() {
-        return this.bohnenverbrauch;
+        return super.getbohnenverbrauch();
     }
-
     @Override
-    public void setbohnenverbrauch( double neuerVerbrauch) {
-
+    public void setbohnenverbrauch(double neuerVerbrauch) {
+        super.setbohnenverbrauch(neuerVerbrauch);
     }
 }
+
+

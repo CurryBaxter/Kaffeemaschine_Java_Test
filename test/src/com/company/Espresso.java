@@ -3,7 +3,7 @@ package com.company;
 class Espresso extends Kaffeesorte {
 
     protected Espresso() {
-        super(7.5);
+        super(7.5, false);
     }
 
     @Override
@@ -13,6 +13,6 @@ class Espresso extends Kaffeesorte {
 
     @Override
     public void setbohnenverbrauch(double neuerVerbrauch) {
-        super.setbohnenverbrauch(neuerVerbrauch);
-    }
+    super.setbohnenverbrauch(neuerVerbrauch);
+}
 }

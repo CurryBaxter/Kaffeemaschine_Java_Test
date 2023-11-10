@@ -1,6 +1,9 @@
 package com.company;
 
 public class Kaffeemaschine {
+
+    //Kaffeemaschine instanziiert alle Komponenten und macht so die Methoden verfügbar und dann später über die App aufrufbar
+    // sorgt somit hoffentlich für übersichtlicheren Code
     Bohnenbehaelter Bohnenbehalter = new Bohnenbehaelter();
     Wassertank Wassertank = new Wassertank();
     Kaffeesatzbehaelter Kaffeesatzbehalter = new Kaffeesatzbehaelter();

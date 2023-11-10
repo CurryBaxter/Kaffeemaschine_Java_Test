@@ -18,7 +18,7 @@ public class Kaffeesatzbehaelter {
     }
 
     public void leereBehaelter(){
-        MengeKaffeesatz = 0;
+        setMengeKaffeesatz(0);
     }
 
     public boolean KSbehaelternichtvoll(){             //wird in anderen Funktionen der Kaffeemaschine aufgerufen, um mehrfach gleichen Code zum Prüfen des Bestandes zu vermeiden
