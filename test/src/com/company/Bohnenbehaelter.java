@@ -7,11 +7,6 @@ public class Bohnenbehaelter {
     private double Bohnenmenge = 0;
     private double maxBohnen = 500;
 
-    public void initChoiceArray(){
-        ArrayList<Integer> validChoices = new ArrayList<>();
-        validChoices.add(1);
-        validChoices.add(2);
-    }
     public Bohnenbehaelter(){
     }
 
@@ -22,6 +17,9 @@ public class Bohnenbehaelter {
     public void setBohnenmenge(double input){
         this.Bohnenmenge = input;
     }
+    public boolean Bohnenvorhanden(){
+        return getBohnenmenge()>0;
+    }
 
     public void fuelleBohnen(){
         Bohnenmenge = maxBohnen;
@@ -31,12 +29,11 @@ public class Bohnenbehaelter {
 
     public <T extends Kaffeesorte> void mahleBohnen(T kaffeesorte) {
         Scanner CLIbohnenmahlen = new Scanner(System.in);
-        double verbrauch  = getBohnenmenge() - kaffeesorte.getbohnenverbrauch();
-        double neuerBohnenstand = 0;
+        boolean KaffeeMoeglich  = getBohnenmenge() - kaffeesorte.getbohnenverbrauch() > 0 ;
+        double bohnenverbrauch = getBohnenmenge() - kaffeesorte.getbohnenverbrauch();
         while (true) {
-            if (verbrauch>=0) {
-                neuerBohnenstand = getBohnenmenge() - verbrauch;
-                setBohnenmenge(neuerBohnenstand);
+            if (KaffeeMoeglich) {
+                setBohnenmenge(getBohnenmenge() - bohnenverbrauch);
                 System.out.println("Bohnen gemahlen");
                 break;
             } else {
@@ -46,12 +43,11 @@ public class Bohnenbehaelter {
 
                     if (choice == 1) {
                         fuelleBohnen();
-                        neuerBohnenstand = getBohnenmenge() - verbrauch;
-                        setBohnenmenge(neuerBohnenstand);
+                        setBohnenmenge(getBohnenmenge() - bohnenverbrauch);
                         System.out.println("Bohnen gemahlen");
                         break;
                     } else if (choice == 2) {
-                        System.out.println("Wähle eine andere Sorte oder fülle die Bohnen auf" + "\n" + "Sie haben einen Bestand von: " + getBohnenmenge() + " Gramm");
+                        System.out.println("Wähle eine andere Sorte oder fülle die Bohnen auf" + "\n" + "Die Bohnen haben einen Bestand von: " + getBohnenmenge() + " Gramm");
                         break;
                     } else {
                         System.out.println("Ungültige Eingabe: Nur 1 oder 2 sind erlaubt. Bitte versuchen Sie es erneut.");

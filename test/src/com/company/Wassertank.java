@@ -18,4 +18,7 @@ public class Wassertank {
     public void fuelleWasser(){
         Wasserstand = maxWasserstand;
     }
+    public boolean Wasservorhanden(){
+        return getWasserstand()>0;
+    }
 }
