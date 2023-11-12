@@ -6,6 +6,7 @@ public class App {
         Espresso Expresso = new Espresso();
         Bohnenbehaelter Bohnenbehalter = new Bohnenbehaelter();
         Bohnenbehalter.mahleBohnen(Expresso);
+        Bohnenbehalter.mahleBohnen(Capp);
 
 
     }

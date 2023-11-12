@@ -7,9 +7,16 @@ public class Kaffeemaschine {
     Bohnenbehaelter Bohnenbehalter = new Bohnenbehaelter();
     Wassertank Wassertank = new Wassertank();
     Kaffeesatzbehaelter Kaffeesatzbehalter = new Kaffeesatzbehaelter();
-    public void brueheKaffee(){
+    Milchtank Milchbehalter = new Milchtank();
+    Wasserkocher Wasserkocher = new Wasserkocher();
+    public void brueheKaffee(Kaffeesorte a){
         if(Kaffeesatzbehalter.KSbehaelternichtvoll() && Wassertank.Wasservorhanden() && Bohnenbehalter.Bohnenvorhanden()) {
             //mahle Bohnen, koche Wasser etc
+            Bohnenbehalter.mahleBohnen(a);
+            if(a.milkrequired)
+                Milchbehalter.schauemeMilch(a);
+            Wasserkocher.kocheWasser();
+
         }
     }
 
